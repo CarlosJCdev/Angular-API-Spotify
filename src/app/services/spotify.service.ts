@@ -20,4 +20,11 @@ getNewMusic(){
  return this.http.get('https://api.spotify.com/v1/browse/new-releases', {headers})
 }
 
+getArtista(termino: string){
+  const headers= new HttpHeaders({
+    'Authorization': 'Bearer BQDHagPBVFnqy-JMw9ZjbCoWEdbAWDCpac-MHPaQL_VDfyITzPrQt263qWi6v5gJRRaURQcDDXHrNT8BySo'
+  });
+ return this.http.get(`https://api.spotify.com/v1/search?q=${termino}&type=artist&limit=15`, {headers})
+}
+
 }
